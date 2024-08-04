@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($_POST['skills'] as $each_skill)
             echo $each_skill . '<br>';
     echo '<br><b> Department: </b>' . $department;
-    echo '<br><br>Image uploaded successfully ' . $image;
+    echo '<br><br>Image uploaded successfully ' . $upimg;
 
 
     // Storing submitted data in file
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $resource,
                 $fname . ',' . $lname . ',' . $address . ',' .
                 $country . ',' . $gender . ',' . $skill . ',' .
-                $username . ',' . $password . ',' . $department . ',' . $image . "\n"
+                $username . ',' . $password . ',' . $department . ',' . $upimg . "\n"
             );
             fclose($resource);
         } else {
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php echo $data[8]; ?>
                         </td>
                         <td>
-                            <?php echo $data[9]; ?>
+                            <img src="/uploads/<?php echo $data[9];?>" alt="img not found">
                         </td>
                         <td>
                             <a href="#">Show</a>

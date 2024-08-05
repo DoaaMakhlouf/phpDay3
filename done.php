@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Change image path to a new secured one
-    $upimg = '/uploads/' . $_FILES['myImg']['name'];
+    $upimg = 'uploads/' . $_FILES['myImg']['name'];
 
     // Validate the uploaded file as an image
     if (getimagesize($image['tmp_name']) === false) {
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php echo $data[8]; ?>
                         </td>
                         <td>
-                            <img src="/uploads/<?php echo $data[9];?>" alt="img not found">
+                            <img width=50px; height=50px; src="<?php echo $data[9];?>" alt="img not found">
                         </td>
                         <td>
                             <a href="#">Show</a>
